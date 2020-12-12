@@ -4,7 +4,13 @@ import os
 import sys
 import time
 import socket
-
+my_list = []
+while True:
+        time.sleep(0.2)
+        q = input("Pleass Enter Your List ==>  ")
+        my_list.append(q)
+        if q == "exit" or q == "" or q == None  or q == "666":
+            break
 def __1__():
     time.sleep(1)
     print("Hello . Welcome Back ;)")
@@ -20,17 +26,12 @@ def __1__():
             pass
     if not "https" in target or not "http" in target :
         target = "http://" + target
-    my_list = []
+
     print("\n")
     time.sleep(1)
-    while True:
-        time.sleep(0.2)
-        q = input("Pleass Enter Your List ==>  ")
-        my_list.append(q)
-        if q == "exit" or q == "" or q == None  or q == "666":
-            break
+
     for i in my_list:
-        host = target + "/" + i
+        host = str(i) + "." + str(target)
         bypass = socket.gethostbyname(host)
         if bypass_status_code == 200:
             print("This Is Ok ;) + Your Ip ==>  " + host + bypass)
